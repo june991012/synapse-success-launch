@@ -1,11 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection = () => {
-  const isMobile = useIsMobile();
-  
   const scrollToWaitlist = () => {
     const waitlistSection = document.getElementById('waitlist');
     if (waitlistSection) {
@@ -17,7 +13,7 @@ const HeroSection = () => {
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-16 overflow-hidden bg-gradient-to-b from-secondary/50 to-white">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16">
-          <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in">
+          <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in lg:pl-8 xl:pl-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
               고객 성공의 <span className="text-primary">새로운 공식</span>을 소개합니다.
             </h1>
@@ -33,44 +29,28 @@ const HeroSection = () => {
           </div>
           
           <div className="relative h-[400px] w-full lg:w-1/2">
-            {/* Adaptive connecting lines/arrows based on screen size */}
-            {!isMobile ? (
-              // Desktop version - normal SVG paths
-              <div className="absolute top-0 left-0 w-full h-full">
-                <svg className="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                  {/* 왼쪽 상단 (Salesforce) */}
-                  <path d="M5 115 L180 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  
-                  {/* 왼쪽 하단 (Gmail) */}
-                  <path d="M90 30 L190 210" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  
-                  {/* 오른쪽 상단 (Slack) */}
-                  <path d="M305 85 L220 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  
-                  {/* 오른쪽 하단 (Zoom) */}
-                  <path d="M20 320 L210 210" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  
-                  {/* 상단 중앙 (KakaoTalk) */}
-                  <path d="M340 300 L200 170" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  
-                  {/* 오른쪽 중앙 (Phone) */}
-                  <path d="M350 200 L230 200" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                </svg>
-              </div>
-            ) : (
-              // Mobile version - optimized compact SVG paths
-              <div className="absolute top-0 left-0 w-full h-full">
-                <svg className="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                  {/* Simplified mobile paths */}
-                  <path d="M50 90 L180 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  <path d="M90 100 L180 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  <path d="M250 90 L220 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  <path d="M80 280 L180 210" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  <path d="M290 280 L220 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                  <path d="M300 190 L220 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
-                </svg>
-              </div>
-            )}
+            {/* Connecting lines/arrows */}
+            <div className="absolute top-0 left-0 w-full h-full">
+              <svg className="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                {/* 왼쪽 상단 (Salesforce) */}
+                <path d="M5 115 L180 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
+                
+                {/* 왼쪽 하단 (Gmail) */}
+                <path d="M90 30 L190 210" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
+                
+                {/* 오른쪽 상단 (Slack) */}
+                <path d="M305 85 L220 190" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
+                
+                {/* 오른쪽 하단 (Zoom) */}
+                <path d="M20 320 L210 210" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
+                
+                {/* 상단 중앙 (KakaoTalk) */}
+                <path d="M340 300 L200 170" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
+                
+                {/* 오른쪽 중앙 (Phone) */}
+                <path d="M350 200 L230 200" stroke="rgba(0, 139, 139, 0.2)" strokeWidth="2" fill="none" />
+              </svg>
+            </div>
 
             {/* Central Synapse element */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-primary text-white p-7 rounded-full shadow-lg z-20">
@@ -79,7 +59,7 @@ const HeroSection = () => {
               </div>
             </div>
             
-            {/* Original positioning for data source icons */}
+            {/* Data source icons flowing into the center */}
             <div className="absolute top-[22%] left-[16%] animate-float bg-white p-4 rounded-lg shadow-md z-10">
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" 
