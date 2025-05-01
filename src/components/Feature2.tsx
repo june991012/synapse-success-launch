@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MessageSquare, Brain, Lightbulb } from 'lucide-react';
 
@@ -11,9 +10,8 @@ const Feature2 = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Synapse Assist</span>: AI 기반 고객 성공 자동화
             </h2>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-              End-User가 필요로 하는 도움과 성공 전략을 기다리지 않고 얻도록. Synapse AI가 고객의 질문(프롬프트)과 맥락을 
-              즉시 이해하고 최적의 솔루션과 선제적 제안을 자동으로 제공합니다.
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto whitespace-pre-line">
+              {'End-User가 필요로 하는 도움과 성공 전략을 기다리지 않고 얻도록.\nSynapse AI가 고객의 질문(프롬프트)과 맥락을 즉시 이해하고 최적의 솔루션과 선제적 제안을 자동으로 제공합니다.'}
             </p>
           </div>
           

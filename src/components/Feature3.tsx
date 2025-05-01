@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BookOpen, FileCheck, Trophy } from 'lucide-react';
 
@@ -11,9 +10,8 @@ const Feature3 = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Synapse Reflect</span> : 모든 CSM을 최고 수준의 전문가로
             </h2>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-              소수 '에이스'의 경험과 노하우를 팀 전체의 자산으로. 성공 데이터를 기반으로 
-              CSM 역량 향상을 위한 코칭과 피드백을 제공합니다.
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto whitespace-pre-line">
+              {'소수 \'에이스\'의 경험과 노하우를 팀 전체의 자산으로.\n성공 데이터를 기반으로 CSM 역량 향상을 위한 코칭과 피드백을 제공합니다.'}
             </p>
           </div>
           

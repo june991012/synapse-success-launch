@@ -11,7 +11,6 @@ const ValueSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Synapse</span> : CSM의 성공, 고객의 성공, 그리고 비즈니스의 성공
             </h2>
-            <p className="text-lg md:text-xl text-gray-700">기대 효과</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

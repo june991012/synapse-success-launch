@@ -1,19 +1,27 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const WaitlistSection = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
+  const [companySize, setCompanySize] = useState('');
+  const [source, setSource] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!name || !email || !company) {
+    if (!name || !email || !company || !companySize || !source) {
       toast({
         title: "입력 오류",
         description: "모든 필드를 작성해주세요.",
@@ -35,6 +43,8 @@ const WaitlistSection = () => {
       setName('');
       setEmail('');
       setCompany('');
+      setCompanySize('');
+      setSource('');
       setIsSubmitting(false);
     }, 1500);
   };
@@ -53,14 +63,25 @@ const WaitlistSection = () => {
           
           <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Input
-                  type="text"
-                  placeholder="이름"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-md"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="이름"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-md"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="회사명"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-md"
+                  />
+                </div>
               </div>
               <div>
                 <Input
@@ -71,16 +92,36 @@ const WaitlistSection = () => {
                   className="w-full p-3 border border-gray-300 rounded-md"
                 />
               </div>
-              <div>
-                <Input
-                  type="text"
-                  placeholder="회사명"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded-md"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Select value={companySize} onValueChange={setCompanySize}>
+                    <SelectTrigger className="w-full p-3 border border-gray-300 rounded-md">
+                      <SelectValue placeholder="회사 인원 수" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="1-10">1-10명</SelectItem>
+                      <SelectItem value="11-50">11-50명</SelectItem>
+                      <SelectItem value="51-100">51-100명</SelectItem>
+                      <SelectItem value="100+">100명 이상</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Select value={source} onValueChange={setSource}>
+                    <SelectTrigger className="w-full p-3 border border-gray-300 rounded-md">
+                      <SelectValue placeholder="유입 경로" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="google">구글 광고</SelectItem>
+                      <SelectItem value="kakao">카카오톡 톡방</SelectItem>
+                      <SelectItem value="interview">인터뷰 진행</SelectItem>
+                      <SelectItem value="linkedin">링크드인 광고</SelectItem>
+                      <SelectItem value="other">기타</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
-              <Button 
+              <Button
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-md text-lg transition-all"
