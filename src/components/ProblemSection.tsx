@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { User } from 'lucide-react';
+import { User, MessageCircle } from 'lucide-react';
 
 const ProblemSection = () => {
   return (
@@ -49,20 +49,31 @@ const ProblemSection = () => {
               </p>
               
               <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-primary">실제 CSM들은 이렇게 말합니다.</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="quote-card">
-                    <p className="italic text-gray-700">
+                <h3 className="text-xl font-semibold mb-6 text-primary">실제 CSM들은 이렇게 말합니다.</h3>
+                <div className="flex flex-col space-y-4">
+                  <div className="speech-bubble relative bg-white p-5 rounded-lg shadow-md border-l-4 border-primary">
+                    <div className="absolute top-5 -left-3">
+                      <MessageCircle className="w-6 h-6 text-primary fill-white" />
+                    </div>
+                    <p className="italic text-gray-700 pl-4">
                       "미팅 전에 알아야 할 정보가 너무 많아요. 여러 채널 확인하려고 시간을 너무 많이 써요."
                     </p>
                   </div>
-                  <div className="quote-card">
-                    <p className="italic text-gray-700">
+                  
+                  <div className="speech-bubble relative bg-white p-5 rounded-lg shadow-md border-l-4 border-primary">
+                    <div className="absolute top-5 -left-3">
+                      <MessageCircle className="w-6 h-6 text-primary fill-white" />
+                    </div>
+                    <p className="italic text-gray-700 pl-4">
                       "고객사마다 비슷한 내용을 계속 반복해서 설명하는 게 너무 고통스럽고 비효율적이에요."
                     </p>
                   </div>
-                  <div className="quote-card md:col-span-2">
-                    <p className="italic text-gray-700">
+                  
+                  <div className="speech-bubble relative bg-white p-5 rounded-lg shadow-md border-l-4 border-primary">
+                    <div className="absolute top-5 -left-3">
+                      <MessageCircle className="w-6 h-6 text-primary fill-white" />
+                    </div>
+                    <p className="italic text-gray-700 pl-4">
                       "잘 하는 동료의 노하우는 배우고 싶은데, 옆에 딱 붙어있지 않는 이상 알 수가 없죠."
                     </p>
                   </div>
