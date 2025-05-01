@@ -17,7 +17,7 @@ const HeroSection = () => {
     <section className="relative min-h-[100vh] flex items-center pt-32 pb-16 overflow-hidden bg-gradient-to-b from-secondary/50 to-white">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16">
-          <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in lg:pl-6">
+          <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance leading-tight">
               고객 성공의 <span className="text-primary">새로운 공식</span>을 소개합니다.
             </h1>
@@ -79,8 +79,8 @@ const HeroSection = () => {
               </div>
             </div>
             
-            {/* Responsive positioning for data source icons */}
-            <div className={`absolute ${isMobile ? 'top-[15%] left-[20%]' : 'top-[22%] left-[16%]'} animate-float bg-white p-4 rounded-lg shadow-md z-10`}>
+            {/* Original positioning for data source icons */}
+            <div className="absolute top-[22%] left-[16%] animate-float bg-white p-4 rounded-lg shadow-md z-10">
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" 
                 alt="Salesforce" 
@@ -88,7 +88,7 @@ const HeroSection = () => {
               />
             </div>
             
-            <div className={`absolute ${isMobile ? 'bottom-[15%] left-[15%]' : 'bottom-[12%] left-[20%]'} animate-float-delay-1 bg-white p-4 rounded-lg shadow-md z-10`}>
+            <div className="absolute bottom-[12%] left-[20%] animate-float-delay-1 bg-white p-4 rounded-lg shadow-md z-10">
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" 
                 alt="Gmail" 
@@ -96,7 +96,7 @@ const HeroSection = () => {
               />
             </div>
             
-            <div className={`absolute ${isMobile ? 'top-[8%] right-[25%]' : 'top-[15%] right-[32%]'} animate-float-delay-2 bg-white p-4 rounded-lg shadow-md z-10`}>
+            <div className="absolute top-[15%] right-[32%] animate-float-delay-2 bg-white p-4 rounded-lg shadow-md z-10">
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" 
                 alt="Slack" 
@@ -104,7 +104,7 @@ const HeroSection = () => {
               />
             </div>
             
-            <div className={`absolute ${isMobile ? 'bottom-[18%] right-[20%]' : 'bottom-[15%] right-[28%]'} animate-float bg-white p-4 rounded-lg shadow-md z-10`}>
+            <div className="absolute bottom-[15%] right-[28%] animate-float bg-white p-4 rounded-lg shadow-md z-10">
               <img 
                 src="https://img.freepik.com/premium-vector/square-zoom-logo-isolated-white-background_469489-910.jpg" 
                 alt="Zoom" 
@@ -112,7 +112,7 @@ const HeroSection = () => {
               />
             </div>
 
-            <div className={`absolute ${isMobile ? 'left-[28%] top-[8%]' : 'left-[35%] top-[5%]'} transform -translate-x-1/2 animate-float-delay-1 bg-white p-4 rounded-lg shadow-md z-10`}>
+            <div className="absolute left-[35%] top-[5%] transform -translate-x-1/2 animate-float-delay-1 bg-white p-4 rounded-lg shadow-md z-10">
               <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/e/e3/KakaoTalk_logo.svg" 
                 alt="KakaoTalk" 
@@ -120,7 +120,7 @@ const HeroSection = () => {
               />
             </div>
 
-            <div className={`absolute ${isMobile ? 'right-[15%] top-[40%]' : 'right-[22%] top-[40%]'} transform -translate-y-1/2 animate-float-delay-2 bg-white p-4 rounded-lg shadow-md z-10`}>
+            <div className="absolute right-[22%] top-[40%] transform -translate-y-1/2 animate-float-delay-2 bg-white p-4 rounded-lg shadow-md z-10">
               <svg viewBox="0 0 24 24" className="w-10 h-10" fill="#34C759">
                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
               </svg>
